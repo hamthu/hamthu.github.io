@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <title>Inlämning 1-3</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+ 	<button id="varde" onClick="tillgeVarde()">Ange värde</button>
+    <p id="tal">0</p>
+	<p>Hello</p>
+		<a href="#">Click to hide me too</a>
+	<p>Here is another paragraph</p>
+ 
+	<script>
+		var cond = 0;
+		var tal = 0;
+		$( "a" ).hide();
+		$( "p" ).click(function( event ) {
+  			event.preventDefault();
+  			$( "a" ).show();
+			$("p").hide();
+		});
+		$("a").click(function( event ){
+			event.preventDefault();
+			$("p").show();
+			$("a").hide();
+		});
+
+		function tillgeVarde(){
+			
+			
+			while(cond == 0){
+				
+				tal = parseInt(prompt("Ange ett önskat tal", "Skriv önskat tal här"));
+				if((tal % tal) == 0){
+					cond = 1;
+				}
+				else{
+					alert("Du måste skriva in ett tal");				
+				}
+			}
+			document.getElementById("tal").innerHTML = tal;
+			cond = 0;
+		}
+	</script>
+ 
+</body>
+</html>
